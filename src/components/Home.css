@@ -1,0 +1,14 @@
+.home {
+    border: 1px solid;
+    height: 344px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+        margin-top: 49px
+}
+
+img, svg {
+    vertical-align: middle;
+    height: 178px;
+}

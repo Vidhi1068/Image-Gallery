@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Header from "./layout/Header";
+import Gallery from "./components/Gallery";
+import Cloth from "./components/Cloth";
+import Mobile from "./components/Mobile";
+import Jewellary from "./components/Jewellary";
+import Home from "./components/Home";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/Home" element={<Home />}></Route>
+        <Route path="/Gallery" element={<Gallery />}></Route>
+        <Route path="/Mobile" element={<Mobile />}></Route>
+        <Route path="/Cloth" element={<Cloth />}></Route>
+        <Route path="/Jewellary" element={<Jewellary />}></Route>
+      </Routes>
+    </>
   );
 }
 
