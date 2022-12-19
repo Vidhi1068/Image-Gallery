@@ -19,21 +19,22 @@ export default function Home() {
   function handleChange(e) {
     console.log("files--->", e.target.files);
     setStoreImg(URL.createObjectURL(e.target.files[0])); //show us image name
-  }
+    const reader = new FileReader();
+    const file = e.target.files[0];
 
-  // const handleUpload=(file)=>{
-  //     dispatch(upload(file))
-  // }
+    // reader.onloadend = () => reader?.onFileLoaded(reader.result);
+    reader.readAsDataURL(file);
+  }
+  
 
   function handleApi() {
-    const FormData = new FormData();
-    FormData.append("storeImg", storeImg);
-    console.log("formdata", FormData);
-    axios.post("url", FormData).then((res) => {
+    const formData = new FormData();
+    formData.append("storeImg", storeImg);
+    console.log("formdata", formData);
+    axios.post("url", formData).then((res) => {
       console.log("result==>", res);
+      // dispatch(upload(storeImg));
     });
-
-    // dispatch(upload())
   }
 
   return (
